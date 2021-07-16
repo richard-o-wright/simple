@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : DnDDocument.xml
+    Created on : 23 December 2009, 9:54 AM
+    Author     : Richard Wright
+    Description:
+        The document is intended to carry font and colour object information between Drag
+        and Drop supporting objects in the IVY desktp framework
+-->
+<fontandcolour>
+    <font name="Dialog" style="2" size="12"/>
+    <colour use="foreground" red="12" green="200" blue="120" alpha="255"/>
+    <colour use="background" red="200" green="200" blue="200" alpha="255"/>
+</fontandcolour>
