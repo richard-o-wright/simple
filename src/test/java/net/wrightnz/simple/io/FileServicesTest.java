@@ -11,7 +11,7 @@ class FileServicesTest {
   @Test
   void getHumanReadableFileSize() {
     String fileSize = FileServices.getHumanReadableFileSize(new File("README.md"));
-    assertEquals("44 bytes", fileSize);
+    assertEquals("46 bytes", fileSize);
   }
 
 }
