@@ -56,7 +56,5 @@ public class StringPlay {
             return name;
         }
     }
-
-    
     
 }
