@@ -17,9 +17,9 @@ public class Substituter {
    *
    * @param template the template for the message;
    * @param tagValues A list of KeyValue objects, containing tags and their
- corresponding values; all instances of the tag in the message will be
- replaced by the value. The tags will be replaced in the list order -- so
- earlier tags can contain later tags, and the replacement will work.
+   * corresponding values; all instances of the tag in the message will be
+   * replaced by the value. The tags will be replaced in the list order -- so
+   * earlier tags can contain later tags, and the replacement will work.
    *
    * @return the message as String.
    * @throws TagSubstituterException If a tag cannot be replaced.
