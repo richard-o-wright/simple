@@ -8,8 +8,9 @@ import java.util.regex.Pattern;
 /**
  *
  * @author Richard Wright
+ * @param <T>
  */
-public class Substituter {
+public class Substituter<T> {
 
   /**
    * Return a message. The message is obtained from a template string, and
@@ -24,15 +25,15 @@ public class Substituter {
    * @return the message as String.
    * @throws TagSubstituterException If a tag cannot be replaced.
    */
-  public static String substitute(String template, List<KeyValue<String>> tagValues) throws TagSubstituterException {
+  public String substitute(String template, List<KeyValue<T>> tagValues) throws TagSubstituterException {
     String result = template;
     try {
-      for (KeyValue<String> entry : tagValues) {
+      for (KeyValue<T> entry : tagValues) {
         String tag = entry.getTag();
-        String value = entry.getValue();
+        T value = entry.getValue();
         Pattern pattern = Pattern.compile(tag);
         Matcher matcher = pattern.matcher(result);
-        result = matcher.replaceAll(value);
+        result = matcher.replaceAll(value.toString());
       }
       return result;
     } catch (NullPointerException npe) {
@@ -51,7 +52,8 @@ public class Substituter {
     tandV.add(new KeyValue("<insertgroup>", "#### <groupid> ####"));
     tandV.add(new KeyValue("<groupid>", "1"));
     String template = "<groupid> blah <insertgroup> blah blah <groupid> blah fish chips <groupid> blah <groupid>";
-    System.out.println(Substituter.substitute(template, tandV));
+    Substituter<String> substituter = new Substituter<>();
+    System.out.println(substituter.substitute(template, tandV));
   }
 
 }
