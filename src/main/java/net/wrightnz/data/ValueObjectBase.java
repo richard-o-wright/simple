@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package net.wrightnz.data;
 
 import java.lang.reflect.InvocationTargetException;
@@ -38,8 +33,7 @@ public class ValueObjectBase implements java.io.Serializable{
         List<Method> getters = new ArrayList<Method>();
         Class c = getClass();
         Method[] methods = c.getMethods();
-        for (int i = 0; i < methods.length; i++) {
-            Method method = methods[i];
+        for (Method method : methods) {
             addToGetters(getters, method);
         }
         return getters;

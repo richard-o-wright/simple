@@ -45,6 +45,8 @@ public class Analysis {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
+     * @throws java.text.ParseException
      */
     public static void main(String[] args)throws SQLException, ParseException{
         new Analysis().analyse();
