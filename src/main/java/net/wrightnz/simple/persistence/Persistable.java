@@ -9,5 +9,5 @@ public interface Persistable {
     Key getKey();
 
     void setKey(Key key);
-    
+
 }
